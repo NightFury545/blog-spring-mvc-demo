@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="${post.getTitle()}">Title</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+
+    .post-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #f9f9f9;
+      transition: box-shadow 0.3s;
+    }
+
+    .post-container:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .post-title {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .post-content {
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: #666;
+    }
+
+    .post-author {
+      font-size: 1em;
+      color: #888;
+      margin-bottom: 20px;
+    }
+
+    .back-link {
+      margin-top: 20px;
+      display: inline-block;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .post-actions {
+      display: flex;
+      justify-content: flex-start;
+      margin-top: 10px;
+    }
+
+    .post-actions a, .post-actions form {
+      margin-right: 10px;
+      text-decoration: none;
+      color: #007BFF;
+    }
+
+    .post-actions a:hover, .post-actions form:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<div class="post-container">
+  <h1 class="post-title" th:text="${post.getTitle()}">Post Title</h1>
+  <p class="post-author" th:text="'Автор: ' + ${post.getUser().getUsername()}"></p>
+  <div class="post-content" th:text="${post.getContent()}">Post content goes here.</div>
+  <p class="post-slug">Slug: <span th:text="${post.getSlug()}"></span></p>
+  <a class="back-link" th:href="@{/posts}">Назад до списку постів</a>
+  <div class="post-actions">
+    <a th:href="@{/posts/edit/{id}(id=${post.getId()})}">Редагувати</a>
+    <form th:action="@{/posts/delete/{id}(id=${post.getId()})}" method="post"
+          style="display:inline;">
+      <button type="submit"
+              style="background: none; border: none; color: #d9534f; cursor: pointer;">Видалити
+      </button>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

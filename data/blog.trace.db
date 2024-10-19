@@ -1,0 +1,20 @@
+2024-10-19 14:41:34.724793+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Значение слишком длинное для поля "TITLE CHARACTER VARYING(24)": "'dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd' (72)"
+Value too long for column "TITLE CHARACTER VARYING(24)": "'dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd' (72)"; SQL statement:
+insert into posts (content,slug,title,user_id,id) values (?,?,?,?,?) [22001-224]
+2024-10-19 14:47:44.166236+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Значение слишком длинное для поля "TITLE CHARACTER VARYING(24)": "U&'\\0430\\0430\\0430\\0430\\0430\\0430\\0430\\0430\\0430\\0430\\0430\\0430\\0430\\0430\\0430\\0... (75)"
+Value too long for column "TITLE CHARACTER VARYING(24)": "U&'\\0430\\0430\\0430\\0430\\0430\\0430\\0430\\0430\\0430\\0430\\0430\\0430\\0430\\0430\\0430\\0... (75)"; SQL statement:
+insert into posts (content,slug,title,user_id,id) values (?,?,?,?,?) [22001-224]
+2024-10-19 14:58:40.009030+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Значение слишком длинное для поля "TITLE CHARACTER VARYING(24)": "'ffffffffffafafafaf afaaaaaaaaaaaaaaaaaf' (39)"
+Value too long for column "TITLE CHARACTER VARYING(24)": "'ffffffffffafafafaf afaaaaaaaaaaaaaaaaaf' (39)"; SQL statement:
+insert into posts (content,slug,title,user_id,id) values (?,?,?,?,?) [22001-224]
+2024-10-19 15:08:20.746580+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Значение слишком длинное для поля "TITLE CHARACTER VARYING(24)": "'ffffffffffffffffffffffffffffffffffffffffaaaaaaaaaaaaaaaa' (56)"
+Value too long for column "TITLE CHARACTER VARYING(24)": "'ffffffffffffffffffffffffffffffffffffffffaaaaaaaaaaaaaaaa' (56)"; SQL statement:
+insert into posts (content,slug,title,user_id,id) values (?,?,?,?,?) [22001-224]
+2024-10-19 15:12:28.736866+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Значение слишком длинное для поля "TITLE CHARACTER VARYING(24)": "'fffffffffff fffffffffffffffffffaaaaaaaaaaaaaaaa' (47)"
+Value too long for column "TITLE CHARACTER VARYING(24)": "'fffffffffff fffffffffffffffffffaaaaaaaaaaaaaaaa' (47)"; SQL statement:
+insert into posts (content,slug,title,user_id,id) values (?,?,?,?,?) [22001-224]
